@@ -119,7 +119,7 @@ If $ f\in \lone(\rset)$ , the functions $f*\rho_{n}$ are called \alert{regulariz
 \begin{frame}
 \frametitle{An example}
 \begin{itemize}
-\item Set 
+\item Set
 $$\rho(x)=
 \begin{cases}
 c^{-1} \rme^{-1/(1-x)} &  \text{if $|x|\leq 1$},\\
@@ -127,7 +127,7 @@ c^{-1} \rme^{-1/(1-x)} &  \text{if $|x|\leq 1$},\\
 \end{cases}
 $$
 with $c\ =\int_{-1}^{1} \rme^{-1/(1-x)} \rmd x$
-\item The sequence $\rho_{n}(x)=n\rho(nx)$ is a \alert{regularizing sequence}. 
+\item The sequence $\rho_{n}(x)=n\rho(nx)$ is a \alert{regularizing sequence}.
 \item In practice, regularizing sequences are used without defining them explicitly.
 \end{itemize}
 \end{frame}
@@ -161,7 +161,7 @@ Assume that $f$  and $g$ are in  $\mcs(\rset)$. Then the following hold:
 \end{theorem}
 \end{frame}
 
-\frame[plain]{\includegraphics[width=\textwidth]{density}}
+\frame[plain]{\includegraphics[width=\textwidth]{stability}}
 
 
 \section{The Fourier transform on $\ltwo(\rset)$}
@@ -347,12 +347,12 @@ H(\xi)=\frac{P(2 \rmi \pi\xi)}{Q(2 \rmi \pi\xi)}
 $$
 is in $\ltwo(\rset) \cap \linfty(\rset)$ .
 \item By decomposing this rational function into partial fractions, the \alert{impulse response}, defined as the inverse Fourier transform of the \alert{transfer function}
-$$ 
-h=\TFAC{H} 
+$$
+h=\TFAC{H}
 $$
 is bounded, rapidly decreasing, continuous except perhaps at the origin.
 \end{itemize}
-\end{frame}    
+\end{frame}
 
 \begin{frame}
 \frametitle{Simple poles}
@@ -403,9 +403,9 @@ P_{k}(t)=\sum_{m=1}^{m_{k}}\beta_{k,m} \frac{t^{m-1}}{(m-1)!}.
 $$
 \end{itemize}
 \end{frame}
-  
-  
-\begin{frame}    
+
+
+\begin{frame}
 \frametitle{Convolution}
 \begin{itemize}
 \item Since $h=\TFAC{H}$ is bounded, rapidly decreasing, continuous except perhaps at the origin
@@ -413,7 +413,7 @@ $$
 $$
 \hat{g}=\hat{h}\cdot\hat{f}.
 $$
-\item Since $\hat{h} \in \ltwo(\rset)$ and $\hat{f} \in \mcs(\rset) \subset \lone(\rset)$, 
+\item Since $\hat{h} \in \ltwo(\rset)$ and $\hat{f} \in \mcs(\rset) \subset \lone(\rset)$,
 we have $h * f(t)= \TFAC{\hat{h} \hat{f}}$ implies that
 $$
 g=h*f
