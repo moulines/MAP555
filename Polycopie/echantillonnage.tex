@@ -13,72 +13,72 @@ autre que $f$, $f$ admets donc un repr{\'e}sentant continue. Par la suite on ide
 
 
 Soit  $T \leq 1/(2B)$. Nous identifierons dans la suite $T$ avec la \emph{p{\'e}riode d'{\'e}chantillonnage} et $1/T$ avec la \emph{fr{\'e}quence d'{\'e}chantillonnage}.
-Consid{\'e}rons la fonction $\lambda \to F_T(\lambda)$ obtenu en p{\'e}riodisant la fonction $\lambda \to \TF f(\lambda)$ {\`a} la p{\'e}riode $1/T$:
+Consid{\'e}rons la fonction $\xi \to F_T(\xi)$ obtenu en p{\'e}riodisant la fonction $\xi \to \TF f(\xi)$ {\`a} la p{\'e}riode $1/T$:
 $$
-F_T (\lambda) = \sum_{n \in \zset} [\TF f] \left( \lambda - \frac{n}{T} \right) \eqsp.
+F_T (\xi) = \sum_{n \in \zset} [\TF f] \left( \xi - \frac{n}{T} \right) \eqsp.
 $$
-Par construction, la fonction $\lambda \mapsto F_T(\lambda)$ est une fonction p{\'e}riodique de p{\'e}riode $1/T$, et sur chaque
+Par construction, la fonction $\xi \mapsto F_T(\xi)$ est une fonction p{\'e}riodique de p{\'e}riode $1/T$, et sur chaque
 p{\'e}riode $\coint{(k-1/2)/T,(k+1/2)/T}$, la fonction $F_T$ est {\'e}gale {\`a}  $\TF f$ la translat{\'e}e de $k/T$.  Il est donc clair que
 $F_T \in L_2{[-1/2T,1/2T]}$ et  admet donc un d{\'e}veloppement en s{\'e}rie de
 Fourier:
 \begin{equation}
 \label{eq:SerieFourier}
-F_T (\lambda) = \sum_{n \in \zset} c_n(F_T) \rme^{+ \rmi 2 \pi \lambda n T},
+F_T (\xi) = \sum_{n \in \zset} c_n(F_T) \rme^{- \rmi 2 \pi \xi n T},
 \end{equation}
 o{\`u} $\{c_k(F_T)\}$ est la suite de des coefficients de Fourier de la fonction $F_T$,
 d{\'e}finis pour tout $k\in\zset$ par,
 \begin{equation}
 \label{eq:CoefficientFourier}
-c_k(F_T) = T \int_{-1/(2T)}^{1/(2T)} F_T(\lambda) \rme^{+ \rmi 2 \pi \lambda n t} d \lambda\eqsp.
+c_k(F_T) = T \int_{-1/(2T)}^{1/(2T)} F_T(\xi) \rme^{+ \rmi 2 \pi \xi k t} d \xi\eqsp.
 \end{equation}
 L'{\'e}galit{\'e} dans \eqref{eq:SerieFourier} doit {\^e}tre comprise au sens de la convergence dans l'espace de Hilbert
-$L_2([-1/(2T),1/(2T)])$: la s{\'e}rie trigonom{\'e}trique $F_{N,T}(t)(\lambda)$, d{\'e}finie par
+$L_2([-1/(2T),1/(2T)])$: la s{\'e}rie trigonom{\'e}trique $F_{N,T}(t)(\xi)$, d{\'e}finie par
 \begin{equation}
-F_{N,T}(\lambda)= \sum_{k=-N}^N c_N(F_T) \rme^{+ \rmi 2 \pi \lambda n T} \eqsp,
+F_{N,T}(\xi)= \sum_{k=-N}^N c_N(F_T) \rme^{- \rmi 2 \pi \xi n T} \eqsp,
 \end{equation}
 converge vers la fonction $F_T$ au sens de la topologie induite par la norme $\|\cdot\|_2$, c'est-{\`a}-dire,
 $$
-\lim_{N \to \infty} \int_{-1/(2T)}^{1/(2T)} |F_T(\lambda) - F_{N,T}(\lambda)|^2 d \lambda =0 \eqsp.
+\lim_{N \to \infty} \int_{-1/(2T)}^{1/(2T)} |F_T(\xi) - F_{N,T}(\xi)|^2 d \xi =0 \eqsp.
 $$
 L'{\'e}galit{\'e} de Parseval implique aussi que $\sum_{n \in \zset} |c_n(F_T)|^2 < \infty$. Comme nous avons suppos{\'e} que $T \leq
 1/(2B)$, nous avons donc $[-B,+B] \subset [-1/(2T), 1/(2T)]$,
-ce qui implique que, pour tout $\lambda \in [-1/(2T),1/(2T)]$, $F_T(\lambda) = \TF f(\lambda)$, ce qui implique que les
+ce qui implique que, pour tout $\xi \in [-1/(2T),1/(2T)]$, $F_T(\xi) = \TF f(\xi)$, ce qui implique que les
 coefficients de Fourier $c_k(F_T)$ s'{\'e}crivent:
 \begin{equation}
 \label{eq:CoefficientFourier}
-c_k(F_T) = T \int_{-B}^{B} \TF f(\lambda) \rme^{+ \rmi 2 \pi \lambda k T} d \lambda= T f(kT)\eqsp.
+c_k(F_T) = T \int_{-B}^{B} \TF f(\xi) \rme^{+ \rmi 2 \pi \xi k T} d \xi= T f(kT)\eqsp.
 \end{equation}
 Ils correspondent donc aux {\'e}chantillons de la fonction $f$ pr{\'e}lev{\'e}s aux instants r{\'e}guli{\`e}rement espac{\'e}s $kT$ (les instants d'{\'e}chantillonnage). La formule de Parseval pour les
 coefficients de Fourier implique en particulier que $\sum_{k \in \zset} |f(kT)|^2 < \infty$. \eqref{eq:SerieFourier} se r{\'e}{\'e}crit donc
 \begin{equation}
 \label{eq:FormuleSommatoirePoisson}
-\sum_{n \in \zset} \TF f \left( \lambda - \frac{n}{T} \right)  = T \sum_{n \in \zset} f(nT) \rme^{+ \rmi 2 \pi \lambda n T}\eqsp,
+\sum_{n \in \zset} \TF f \left( \xi - \frac{n}{T} \right)  = T \sum_{n \in \zset} f(nT) \rme^{- \rmi 2 \pi \xi n T}\eqsp,
 \end{equation}
 qui est appel{\'e}e la \emph{formule sommatoire de Poisson}. Cette formule, que nous avons d{\'e}montr{\'e} ici pour des fonctions {\`a} bande limit{\'e}e, s'av{\`e}rent v{\'e}rifi{\'e}es
 sous des hypoth{\`e}ses beaucoup plus g{\'e}n{\'e}rales. En multipliant les deux membres de l'identit{\'e} pr{\'e}c{\'e}dente par la fonction indicatrice de l'intervalle
-$[-1/(2T),+1/(2T)]$ et en utilisant $\1_{[-1/(2T),1/(2T)]}(\lambda) \TF f (\lambda)= \1_{[-1/(2T),1/(2T)]}(\lambda) F_T(\lambda)$,
+$[-1/(2T),+1/(2T)]$ et en utilisant $\1_{[-1/(2T),1/(2T)]}(\xi) \TF f (\xi)= \1_{[-1/(2T),1/(2T)]}(\xi) F_T(\xi)$,
 nous obtenons donc l'identit{\'e},
 $$
-\TF f (\lambda) = T \sum_{n \in \zset} f(nT) \1_{[-1/(2T),1/(2T)]}(\lambda) \rme^{+ \rmi 2 \pi \lambda n T} \eqsp.
+\TF f (\xi) = T \sum_{n \in \zset} f(nT) \1_{[-1/(2T),1/(2T)]}(\xi) \rme^{- \rmi 2 \pi \xi n T} \eqsp.
 $$
 qui doit {\^e}tre comprise au sens $L_2(\rset)$,
 $$
-\lim_{N \to \infty} \int \left| \TF f(\lambda)  - T \sum_{n =-N}^N f(nT) \1_{[-1/(2T),1/(2T)]}(\lambda) \rme^{+ \rmi 2 \pi
-    \lambda n T}  \right|^2 \rmd \lambda = 0 \eqsp.
+\lim_{N \to \infty} \int \left| \TF f(\xi)  - T \sum_{n =-N}^N f(nT) \1_{[-1/(2T),1/(2T)]}(\xi) \rme^{- \rmi 2 \pi
+    \xi n T}  \right|^2 \rmd \xi = 0 \eqsp.
 $$
 Comme l'application $\TFC$ est continue de $L_2(\rset) \to L_2(\rset)$ et que
 $$
-\TFAC{\1_{[-1/(2T),1/(2T)]}(\lambda) \rme^{+ \rmi 2 \pi \lambda n T}}= \frac{\sin\left( \frac{\pi}{T}(t - nT)\right)}{\pi(t-nT)}
+\TFAC{\xi \to \1_{[-1/(2T),1/(2T)]}(\xi) \rme^{- \rmi 2 \pi \xi n T}}(x)= \frac{\sin\left( \frac{\pi}{T}(x - nT)\right)}{\pi(t-nT)}
 $$
 (avec la convention $0/0=0$), on obtient la formule d'interpolation
 \begin{equation}
 \label{eq:FormuleInterpolation}
-f(t) = \sum_{n \in \zset} f(nT) s_T(t-nT)  \eqsp,
+f(t) = \sum_{n \in \zset} f(nT) s_T(x-nT)  \eqsp,
 \end{equation}
 o{\`u} la fonction $s_T$, appel{\'e}e \emph{sinus-cardinal} est d{\'e}finie par
 \begin{equation}
 \label{eq:SinusCardinal}
-s_T(0)=0\quad\text{et}\quad s_T(t) = \frac{\sin \left( \frac{\pi}{T} t\right) }{ \frac{\pi}{T} t}\quad\text{pour tout $t\neq0$} \eqsp.
+s_T(0)=0\quad\text{et}\quad s_T(x) = \frac{\sin \left( \frac{\pi}{T} t\right) }{ \frac{\pi}{T} x}\quad\text{pour tout $x\neq0$} \eqsp.
 \end{equation}
 La convergence de la s{\'e}rie \eqref{eq:FormuleInterpolation} a lieu dans $L_2(\rset)$. Si de plus on a
 $$
@@ -109,17 +109,17 @@ Nous supposons toujours que la fonction $f$ est {\`a} bande limit{\'e}e, $f \in 
 {\`a} la bande $ 2 B$ de la fonction. Comme $F_T$ est p{\'e}riodique de p{\'e}riode $1/T$ et
 $F_T \in L_2([-1/(2T),1/(2T)])$, cette fonction est d{\'e}veloppable en s{\'e}rie de Fourier,
 $$
-F_T(\lambda)= T \sum_{n=-\infty}^{\infty} \int_{-1/(2T)}^{1/(2T)} \sum_{n \in \zset} \TF f(\lambda - n/T) \rme^{\rmi 2 \pi \lambda n T} d \lambda \rme^{\rmi 2 \pi \lambda n T}.
+F_T(\xi)= T \sum_{n=-\infty}^{\infty} \int_{-1/(2T)}^{1/(2T)} \sum_{n \in \zset} \TF f(\xi - n/T) \rme^{\rmi 2 \pi \xi n T} d \xi \rme^{\rmi 2 \pi \xi n T}.
 $$
 Un calcul {\'e}l{\'e}mentaire montre que
 \begin{multline*}
-\int_{-1/(2T)}^{1/(2T)} \sum_{n \in \zset} \TF f(\lambda - n/T) \rme^{\rmi 2 \pi \lambda n T} d \lambda = \sum_{n \in \zset} \int_{-1/(2T)}^{1/(2T)}  \TF f(\lambda - n/T) \rme^{\rmi 2 \pi \lambda n T} d \lambda = \\
-\sum_{n \in \zset} \int_{-1/(2T)-n/T}^{1/(2T)-n/T}  \TF f(\lambda) \rme^{\rmi 2 \pi \lambda n T} d \lambda = \int \TF f(\lambda) \rme^{\rmi 2 \pi \lambda n T} d \lambda = f(kT).
+\int_{-1/(2T)}^{1/(2T)} \sum_{n \in \zset} \TF f(\xi - n/T) \rme^{\rmi 2 \pi \xi n T} d \xi = \sum_{n \in \zset} \int_{-1/(2T)}^{1/(2T)}  \TF f(\xi - n/T) \rme^{\rmi 2 \pi \xi n T} d \xi = \\
+\sum_{n \in \zset} \int_{-1/(2T)-n/T}^{1/(2T)-n/T}  \TF f(\xi) \rme^{\rmi 2 \pi \xi n T} d \xi = \int \TF f(\xi) \rme^{\rmi 2 \pi \xi n T} d \xi = f(kT).
 \end{multline*}
 Par cons{\'e}quent, nous avons encore $\sum_{k \in \zset} |f(kT)|^2 < \infty$ et la formule sommatoire de Poisson \eqref{eq:FormuleSommatoirePoisson} reste valide.
 En appliquant $\TF$ aux deux membres de \eqref{eq:FormuleSommatoirePoisson}, nous obtenons donc
 $$
-\left[\TFAC{\sum_{n \in \zset} \TF f(\lambda - n /T) \1_{[-1/(2T),1/(2T)]}(\lambda)}\right](t)
+\left[\TFAC{\sum_{n \in \zset} \TF f(\xi - n /T) \1_{[-1/(2T),1/(2T)]}(\xi)}\right](t)
 = \sum_{n \in \zset} f(nT) \mathrm{sinc} \left( \frac{\pi}{T}(t-nT) \right).
 $$
 Par cons{\'e}quent, si la condition sur la fr{\'e}quence d'{\'e}chantillonnage n'est pas respect{\'e}e, la transform{\'e}e de Fourier de la fonction interpol{\'e}e sera {\'e}gale
@@ -137,9 +137,9 @@ de Parseval,
 $$
 \int \phi_{T,k} \phi_{T,l} = \int \TFA{\phi_{T,k}} \overline{\TFA{\phi_{T,l}}} \eqsp.
 $$
-On a, par d{\'e}finition, $\TFA{\phi_{T,k}}= T \1_{[-1/(2T),1/(2T)]}(\lambda) \rme^{- \rmi 2 \pi \lambda k T}$. Par cons{\'e}quent,
+On a, par d{\'e}finition, $\TFA{\phi_{T,k}}= T \1_{[-1/(2T),1/(2T)]}(\xi) \rme^{- \rmi 2 \pi \xi k T}$. Par cons{\'e}quent,
 $$
-\int \phi_{T,k} \phi_{T,l} = T^2 \int_{-1/(2T)}^{1/(2T)} \rme^{- \rmi 2 \pi \lambda (k-l) T} d \lambda = \begin{cases} T & \quad k = l \\ 0 & \quad k \ne l \end{cases} \eqsp.
+\int \phi_{T,k} \phi_{T,l} = T^2 \int_{-1/(2T)}^{1/(2T)} \rme^{- \rmi 2 \pi \xi (k-l) T} d \xi = \begin{cases} T & \quad k = l \\ 0 & \quad k \ne l \end{cases} \eqsp.
 $$
 Montrons maintenant que la famille $\{ \phi_{T,k} \}$ forment une
 base totale de l'ensemble $\BL{[-1/(2T),1/(2T)]}$. La formule de reconstruction \eqref{eq:FormuleInterpolation} montre que pour tout $N$,
@@ -156,12 +156,12 @@ du signal original (repliement de spectre). Une approche consiste, avant d'{\'e}
 $\BL{1/(2T)}$. Pour $f \in L_2(\rset)$, le calcul de cette projection est {\'e}l{\'e}mentaire. Consid{\'e}rons en effet la fonction $\tilde{f}$ d{\'e}finie
 par:
 $$
-\tilde{f}(t) = \int \TF f (\lambda)  \1_{[-1/(2T),1/(2T)]}(\lambda) \rme^{+ \rmi 2 \pi \lambda t} d \lambda \eqsp.
+\tilde{f}(t) = \int \TF f (\xi)  \1_{[-1/(2T),1/(2T)]}(\xi) \rme^{+ \rmi 2 \pi \xi t} d \xi \eqsp.
 $$
-Par construction, nous avons $\TF \tilde{f} (\lambda) = \TF f (\lambda)  \1_{[-1/(2T),1/(2T)]}(\lambda)$, et donc $\tilde{f} \in \BL{1/(2T)}$.
+Par construction, nous avons $\TF \tilde{f} (\xi) = \TF f (\xi)  \1_{[-1/(2T),1/(2T)]}(\xi)$, et donc $\tilde{f} \in \BL{1/(2T)}$.
 Nous avons d'autre part, pour toute fonction $g \in \BL{1/(2T)}$, par l'identit{\'e} de Plancherel
 $$
-\| f - g \|_2^2 = \| \TF f - \TF g \|_2^2 \geq \int_{|\lambda| \geq 1/(2T)} | \TF f (\lambda)|^2 d \lambda = \| f - \tilde{f} \|_2^2 \eqsp.
+\| f - g \|_2^2 = \| \TF f - \TF g \|_2^2 \geq \int_{|\xi| \geq 1/(2T)} | \TF f (\xi)|^2 d \xi = \| f - \tilde{f} \|_2^2 \eqsp.
 $$
 Par cons{\'e}quence $\tilde{f}$ est la projection de $f$ sur $\BL{1/(2T)}$.
 
