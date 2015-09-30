@@ -35,14 +35,13 @@ A function $f \in L_2(\rset)$ is said to be  \alert{band limited} if there exist
 
 \begin{frame}
 \frametitle{Periodizing the Fourier transform}
-\only<1->{Let $T \leq 1/(2B)$ be the \alert{sampling period} and $1/T$ be the \alert{sampling frequency}.
+\begin{itemize}
+\item Let $T \leq 1/(2B)$ be the \alert{sampling period} and $1/T$ be the \alert{sampling frequency}.
 Consider the periodic function $\xi \to \TF f(\xi)$ given by:
 $$
 F_T (\xi) = \sum_{n \in \zset} [\TF f] \left( \xi - \frac{n}{T} \right) \eqsp.
 $$
-}
-\only<2>{$\xi \mapsto F_T(\xi)$ is periodic with period $1/T$}
-\only<3>{The function  $F_T \in L_2{[-1/2T,1/2T]}$ can be expanded as a series function
+\item The function  $F_T \in L_2{[-1/2T,1/2T]}$ can be expanded as a series function
 \begin{equation*}
 F_T (\xi) = \sum_{n \in \zset} c_n(F_T) \rme^{- \rmi 2 \pi \xi n T},
 \end{equation*}
@@ -50,7 +49,7 @@ where $\{c_k(F_T)\}$, the Fourier coefficients are given by
 \begin{equation*}
 c_k(F_T) = T \int_{-1/(2T)}^{1/(2T)} F_T(\xi) \rme^{+ \rmi 2 \pi \xi k T} \rmd \xi\eqsp.
 \end{equation*}
-}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -790,7 +789,7 @@ x[((n-m))_N] & \ltfd W_N^{mk} X[k]
 \begin{frame}
 \frametitle{Circular convolution}
 \begin{itemize}
-\item Consider two finite duration sequences $x_1[n]$ and $x_2[n]$, both of length $N$ and assume that $x_1[n] \ldft X_1[k]$ and $x_2[n] \ldft X_2[k]$. 
+\item Consider two finite duration sequences $x_1[n]$ and $x_2[n]$, both of length $N$ and assume that $x_1[n] \ltfd X_1[k]$ and $x_2[n] \ltfd X_2[k]$. 
 \item Set $X_3[k]= X_1[k]X_2[k]$ and 
 \begin{align*}
 x_3[n] 
@@ -801,45 +800,222 @@ x_3[n]
 \end{itemize}
 \end{frame}
 
+\frame[plain]{\includegraphics[width=\textwidth]{circularconv}}
+
+
 \section{The Fast Fourier Transform}
+
+\begin{frame}
+\frametitle{Some history}
+\begin{itemize}
+\item As far as we can tell, Gauss was the first to propose the techniques that we now call the fast Fourier transform (FFT) for calculating the coefficients in a trigonometric expansion of an asteroid's orbit in 1805. 
+\item However, it was the seminal paper by Cooley and Tukey [link] in 1965 that caught the attention of the science and engineering community and, in a way, founded the discipline of digital signal processing (DSP).
+\item The impact of the Cooley-Tukey FFT was enormous. Problems could be solved quickly that were not even considered a few years earlier. A flurry of research expanded the theory and developed excellent practical programs as well as opening new applications.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast algorithm ?}
+\begin{itemize}
+\item The development of fast algorithms usually consists of using special properties of the algorithm of interest to remove redundant or unnecessary operations of a direct implementation. 
+\item Because of the periodicity, symmetries, and orthogonality of the basis functions and the special relationship with convolution, the discrete Fourier transform (DFT) has enormous capacity for improvement of its arithmetic efficiency.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Complexity}
+\begin{itemize}
+\item The DFT of a finite-length sequence of length $N$ is
+\[
+X[k]= \sum_{k=0}^{N-1} x[n] W_N^{nk} \eqsp, \quad k=0,1,\dots,N-1.
+\]
+\item Since $x[n]$ may be complex, $N$ complex multiplications and $(N-1)$ complex additions are required to compute each DFT coefficients if we use directly the above expression as a formula for computation.
+\item To compute all $N$ values therefore requires a total of $N^2$ complex multiplications and $N(N-1)$ additions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decimation-in-time FFT algorithms}
+\begin{itemize}
+\item The principle of the \alert{decimation-in-time} is most conveniently illustrated by the special case $N=2^\nu$. Since $N$ is an even-integer, we can consider computing $X[k]$ by separating $x[n]$ into two $N/2$-point sequences consisting of the \alert{even-numbered points} in $x[n]$ and the \alert{odd-numbered} points:
+\item With $X[k]= \sum_{n=0}^{N-1} x[n] W_N^{nk}$ and separating $x[n]$ into its even- and odd-numbered points, we obtain
+\begin{align*}
+X[k]&=\sum_{r=0}^{(N/2)-1}x[2r]W_{N}^{2rk}+\sum_{r=0}^{(N/2)-1}x[2r+1]W_{N}^{(2r+1)k} \\
+&=\sum_{r=0}^{(N/2)-1}x[2r](W_{N}^{2})^{rk}+W_{N}^{k}\sum_{r=0}^{(N/2)-1}x[2r+1](W_{N}^{2})^{rk}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decimation-in-time FFT algorithms}
+\begin{itemize}
+\item But $W_{N}^{2}=W_{N/2}$, since
+$$
+W_{N}^{2}=\rme^{-2 \rmi (2\pi/N)}= \rme^{-\rmi 2\pi/(N/2)}=W_{N/2}.
+$$
+\item Consequently, $X[k]$ can be rewritten as
+\begin{align*}
+X[k]&=\sum_{r=0}^{(N/2)-1}x[2r]W_{N/2}^{rk}+W_{N}^{k}\sum_{r=0}^{(N/2)-1}x[2r+1]W_{N/2}^{rk} \\
+    &=G[k]+W_{N}^{k}H[k],\quad k=0,1,\cdots,N-1.
+\end{align*}
+\item Each of the sums above is recognized as an $(N/2)$-point DFT, the first sum being the $(N/2)$-point DFT of the even-numbered points of the original sequence and the second being the $(N/2)$-point DFT of the odd-numbered points of the original sequence.
+\item Although the index $k$ ranges over $N$ values, $k=0,1$, \dots, $N-1$, each of the sums must be computed only for $k$ between $0$ and $(N/2)-1$, since $G[k]$ and $H[k]$ are each periodic in $k$ with period $N/2$.
+\end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{Divide and Conquer: step 1}
 \begin{figure}
   \centering
   % Requires \usepackage{graphicx}
-  \includegraphics[width=0.7\textwidth]{FFT81}\\
+  \includegraphics[width=0.7\textwidth]{Fig81.jpg}\\
 \end{figure}
 
+\end{frame}
+
+\begin{frame}
+\frametitle{Complexity}
+\begin{itemize}
+\item Previously we saw that, for direct computation without exploiting symmetry, $N^{2}$ complex multiplications and additions were required.
+\item By comparison, our novel algorithm requires the computation of two $(N/2)$-point DFTs, which in turn requires $2(N/2)^{2}$ complex multiplications and approximately $2(N/2)^{2}$ complex additions if we do the $(N/2)$-point DFTs by the direct method. 
+\item Then the two $(N/2)$-point DFTs must be combined, requiring $N$ complex multiplications, corresponding to multiplying the second sum by $W_{N}^{k}$, and $N$ complex additions, corresponding to adding the product obtained to the first sum. 
+\item Consequently, the computation of $X[k]$ for all values of $k$ requires at most $N+2(N/2)^{2}$ or $N+N^{2}/2$ complex multiplications and complex additions. 
+\item It is easy to verify that for $N>2$, the total $N+N^{2}/2$ will be less than $N^{2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{One step further}
+\begin{itemize}
+\item The first step corresponds to breaking the original $N$-point computation into two $(N/2)$-point DFT computations. 
+\item If $N/2$ is even, as it is when $N$ is equal to a power of 2, then we can consider computing each of the $(N/2)$-point DFTs  by breaking each of the sums in that equation into two $(N/4)$-point DFTs, which would then be combined to yield the $(N/2)$-point DFTs. 
+\item Thus, $G[k]$ in the previous step  would be represented as
+$$
+G[k]= \sum_{r=0}^{(N/2)-1}g[r]W_{N/2}^{rk}=\sum_{\ell=0}^{(N/4)-1}g[2\ell]W_{N/2}^{2\ell k}+\sum_{\ell=0}^{(N/4)-1}g[2\ell+1]W_{N/2}^{(2\ell+1) k}
+$$
+or
+$$
+G[k]=\sum_{\ell=0}^{(N/4)-1}g[2\ell]W_{N/4}^{\ell k}+W_{N/2}^{k}\sum_{\ell=0}^{(N/4)-1}g[2\ell+1]W_{N/4}^{\ell k}.
+$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{One step further}
+\begin{itemize}
+\item Similarly, $H[k]$ would be represented as
+$$
+H[k]=\sum_{\ell=0}^{(N/4)-1}h[2\ell]W_{N/4}^{\ell k}+W_{N/2}^{k}\sum_{\ell=0}^{(N/4)-1}h[2\ell+1]W_{N/4}^{\ell k}.
+$$
+\item Consequently, the $(N/2)$-point DFT $G[k]$ can be obtained by combining the $(N/4)$-point DFTs of the sequences $g[2\ell]$ and $g[2\ell+1]$.
+\item Similarly, the $(N/2)$-point DFT $H[k]$ can be obtained by combining the $(N/4)$-point DFTs of the sequences $h[2\ell]$ and $h[2\ell+1]$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Divide and Conquer !}
+\begin{itemize}
+\item For the more general case, but with $N$ still a power of 2, we would proceed by decomposing the $(N/4)$-point transforms  into $(N/8)$-point transforms and continue until we were left with only 2-point transforms. 
+\item This  requires $\nu =\log_{2}N$ stages of computation. 
+\item Previously, we found that in the original decomposition of an $N$-point transform into two $(N/2)$-point transforms, the number of complex multiplications and additions required was $N+2(N/2)^{2}$ 
+\item When the $(N/2)$-point transforms are decomposed into $(N/4)$-point transforms, the factor of $(N/2)^{2}$ is replaced by $N/2+2(N/4)^{2}$, so the overall computation then requires $N+N+4(N/4)^{2}$ complex multiplications and additions. 
+\item If $N=2^{\nu}$, this can be done at most $\nu=\log_{2}N$ times, so that after carrying out this decomposition as many times as possible, the number of complex multiplications and additions is equal to $N \nu=N\log_{2}N$.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Divide and Conquer: step 2}
-\begin{figure}
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[scale=1]{FFT4}\\
-\end{figure}
+\tikzstyle{n}= [circle, fill, minimum size=4pt,inner sep=0pt, outer sep=0pt]
+\tikzstyle{mul} = [circle,draw,inner sep=-1pt]
+
+% Define two helper counters
+\newcounter{x}\newcounter{y}
+\begin{tikzpicture}[yscale=0.4, xscale=0.8, node distance=0.25cm, auto]
+    % The strategy is to create nodes with names: N-column-row
+    % Input nodes are named N-0-0 ... N-0-15
+    % Output nodes are named N-10-0 ... N-10-15
+
+    % Draw inputs
+    \foreach \y in {0,...,15}
+        \node[n, pin={[pin edge={latex'-,black}]left:$x(\y)$}]
+              (N-0-\y) at (0,-\y) {};
+    % Draw outputs
+    \foreach \y / \idx in {0/0,1/8,2/4,3/12,4/2,5/10,6,7/14,
+                           8/1,9,10/5,11/13,12/3,13/11,14/7,15}
+        \node[n, pin={[pin edge={-latex',black}]right:$X(\idx)$}]
+              (N-10-\y) at (7,-\y) {};
+   % draw connector nodes
+    \foreach \y in {0,...,15}
+        \foreach \x / \c in {1/1,2/3,3/4,4/6,5/7,6/9}
+            \node[n, name=N-\c-\y] at (\x,-\y) {};
+    % draw x nodes
+    \foreach \y in {0,...,15}
+        \foreach \x / \c  in {1/2,4/5,7/8}
+            \node[mul, right of=N-\x-\y] (N-\c-\y) {${\times}$};
+
+    % horizontal connections
+    % Note the use of simple counter arithmetics to get correct
+    % indexes.
+    \foreach \y in {0,...,15}
+        \foreach \x in {0,1,3,4,6,7,9}
+        {
+            \setcounter{x}{\x}\stepcounter{x}
+            \path (N-\x-\y) edge[-] (N-\arabic{x}-\y);
+       }
+    % Draw the W_16 coefficients
+    \setcounter{y}{0}
+    \foreach \i / \j in {0/0,1/0,2/0,3/0,4/0,5/0,6/0,7/0,
+                            0/1,1/1,2/1,3/1,4/1,5/1,6/1,7/1}
+    {
+        \path (N-2-\arabic{y}) edge[-] node {\tiny $W^{\i\cdot\j}_{16}$}
+                (N-3-\arabic{y});
+        \stepcounter{y}
+    }
+    % Draw the W_8 coefficients
+    \setcounter{y}{0}
+    \foreach \i / \j in {0/0,1/0,2/0,3/0,0/1,1/1,2/1,3/1,
+                         0/0,1/0,2/0,3/0,0/1,1/1,2/1,3/1}
+    {
+        \path (N-5-\arabic{y}) edge[-] node {\tiny $W^{\i\cdot\j}_{8}$}
+              (N-6-\arabic{y});
+        \addtocounter{y}{1}
+    }
+
+    % Draw the W_4 coefficients
+    \setcounter{y}{0}
+    \foreach \i / \j in {0/0,1/0,0/1,1/1,0/0,1/0,0/1,1/1,
+                            0/0,1/0,0/1,1/1,0/0,1/0,0/1,1/1}
+    {
+        \path (N-8-\arabic{y}) edge[-] node {\tiny $W^{\i\cdot\j}_{4}$}
+              (N-9-\arabic{y});
+        \stepcounter{y}
+    }
+    % Connect nodes
+    \foreach \sourcey / \desty in {0/8,1/9,2/10,3/11,
+                                   4/12,5/13,6/14,7/15,
+                                   8/0,9/1,10/2,11/3,
+                                   12/4,13/5,14/6,15/7}
+       \path (N-0-\sourcey.east) edge[-] (N-1-\desty.west);
+    \foreach \sourcey / \desty in {0/4,1/5,2/6,3/7,
+                                   4/0,5/1,6/2,7/3,
+                                   8/12,9/13,10/14,11/15,
+                                   12/8,13/9,14/10,15/11}
+        \path (N-3-\sourcey.east) edge[-] (N-4-\desty.west);
+    \foreach \sourcey / \desty in {0/2,1/3,2/0,3/1,
+                                   4/6,5/7,6/4,7/5,
+                                   8/10,9/11,10/8,11/9,
+                                   12/14,13/15,14/12,15/13}
+        \path (N-6-\sourcey.east) edge[-] (N-7-\desty.west);
+    \foreach \sourcey / \desty in {0/1,1/0,2/3,3/2,
+                                   4/5,5/4,6/7,7/6,
+                                   8/9,9/8,10/11,11/10,
+                                   12/13,13/12,14/15,15/14}
+        \path (N-9-\sourcey.east) edge[-] (N-10-\desty.west);
+
+\end{tikzpicture}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Divide and Conquer: step 3}
-\begin{figure}
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[width=0.7\textwidth]{FFT2stages}\\
-\end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{FFT}
-\begin{figure}
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[width=0.7\textwidth]{FFTfull}\\
-\end{figure}
-\end{frame}
 
 
 
