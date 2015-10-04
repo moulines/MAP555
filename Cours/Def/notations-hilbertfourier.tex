@@ -25,6 +25,7 @@
 \newcommand{\Cov}[2]{\mathrm{Cov}(#1,#2)}
 \def\ltfs{\stackrel{\mathrm{DFS}}{\leftrightarrow}}
 \def\ltfd{\stackrel{\mathrm{DFT}}{\leftrightarrow}}
+\def\ltz{\stackrel{Z}{\leftrightarrow}}
 
 %notation fourier
 \def\1{\mathbbm{1}}
@@ -120,7 +121,7 @@
 
 %Operation sur les fonctions/distributions
 
-\newcommand{\translation}{\mathcal{T}}
+\newcommand{\translation}{\operatorname{B}}
 \newcommand{\multiplication}{\mathcal{M}}
 
 
@@ -159,16 +160,19 @@
 
 \newcommandx\sequence[3][2=,3=]
 {\ifthenelse{\equal{#3}{}}{\ensuremath{\{ #1_{#2}\}}}{\ensuremath{\{ #1_{#2}, \eqsp #2 \in #3 \}}}}
-\newcommandx\sequencePar[3][2=,3=]
-{\ifthenelse{\equal{#3}{}}{\ensuremath{\{ #1({#2})\}}}{\ensuremath{\{ #1({#2}), \eqsp #2 \in #3 \}}}}
+\newcommandx\seqpar[3][2=,3=]
+{\ifthenelse{\equal{#3}{}}{\ensuremath{\{ #1[{#2}]\}}}{\ensuremath{\{ #1({#2}), \eqsp #2 \in #3 \}}}}
 \def\pp{\ensuremath{\mathrm{p.p.}}}
 \def\ie{i.e.}
-
+\def\wrt{w.r.t.}
 \newcommand{\ensemble}[2]{\left\{#1\,:\eqsp #2\right\}}
 \newcommand{\set}[2]{\ensemble{#1}{#2}}
 \def\retard{\operatorname{S}}
 \def\foo{\rme^{-2 \rmi \pi \nu}}
 \def\cfoo{\rme^{+2 \rmi \pi \nu}}
 \def\toref{\coint{-1/2,1/2}}
-\def\deg{\mathrm{deg}} 
-\newcommand\indi[1]{\1_{\{#1\}}}
+\def\deg{\mathrm{deg}}
+\newcommand\indi[1]{\1_{\{#1\}}} 
+\newcommand{\filter}[1]{\operatorname{F}_{#1}}
+\newcommand{\ec}[1]{\rme^{-\rmi \omega #1}}
+\newcommand{\ROC}[1]{\mathrm{ROC}(#1)}
