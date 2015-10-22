@@ -142,7 +142,7 @@ $n\rightarrow +\infty$. On note $x_n \rightarrow x$.
 Si dans un espace de Hilbert la suite $x_n\rightarrow x$, alors
 $(x_n)$ est born\'{e}e.
 \end{proposition}
-\begin{proof}\smartqed
+\begin{proof}
 D'apr\`{e}s l'in\'{e}galit\'{e} triangulaire, on a~:
 $$
  \|x_n\|=\|(x_n-x)+x\|\leq \|x_n-x\|+\|x\|
@@ -160,7 +160,7 @@ On note $x_n \rightsquigarrow x$.
 \label{theo:cvgcefaible-implique-forte}
 Une suite $(x_n)$ fortement convergente converge aussi faiblement vers la m\^{e}me limite.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Supposons que $(x_n)$ converge fortement vers $x$, $\lim_{n \to \infty} \| x_n-x\|=0$. Alors,
 pour tout $y \in \calH$,
 \[
@@ -178,7 +178,7 @@ pr\'{e}-hilbertien $\mathcal{H}$. Alors quand $n\rightarrow
 +\infty$\,: $\pscal{x_n}{y_n} \rightarrow \pscal{x}{y}$. En particulier, si $x_n
 \rightarrow x$, $\| x_n \| \rightarrow \|x\|$.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 D'apr\`{e}s l'in\'{e}galit\'{e} triangulaire puis l'in\'{e}galit\'{e} de Cauchy-Schwarz,
 nous avons\,:
 \begin{align*}
@@ -365,7 +365,7 @@ converge dans $\calH$ si et seulement si $\sum_{i} |\alpha_i|^2 <
 \sum_{i=1}^\infty |\alpha_i|^2 \eqsp.
 \end{equation}
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Pour tout $m > k > 0$, de m\^{e}me que pour
 l'\'{e}quation~(\ref{eq:norme_comb_lin_ortho}), nous avons
 \[
@@ -401,7 +401,7 @@ $$
 \inf\left\{\|x-y\|^2 \;:\;y \in\lspan{e_1,\dots,e_n}\right\}\;.
 $$
 \end{proposition}
-\begin{proof}\smartqed
+\begin{proof}
 On remarque que pour tout $j=1,\dots,n$,
 $$
 \pscal{x-\sum_{k=1}^n \pscal{x}{e_k} e_k}{e_j}=\pscal{x}{e_j}-\pscal{x}{e_j}=0\;.
@@ -489,7 +489,7 @@ $\calH$. Alors pour tout $x\in\calH$,
   x=\sum_{i=1}^\infty \pscal{x}{e_i} e_i\;.
 \end{equation}
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
   Nous savons que la s\'{e}rie~(\ref{eq:developpement-Fourier}) converge.
   D'autre part la suite \'{e}tant compl\`{e}te, il existe un tableau
   $(\alpha_{p,n})_{1\leq i\leq n}$ tel que
@@ -551,7 +551,7 @@ hilbertienne. C'est d'ailleurs une condition suffisante.
 Un espace de Hilbert $\calH$ est s\'{e}parable si et seulement si il existe une
 base hilbertienne.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Soit $(e_i)$ une base hilbertienne de $\calH$.
 L'ensemble $S= \bigcup_{n=1}^\infty S_n$ avec, pour $n \in \nset$,
 \[
@@ -644,7 +644,7 @@ K_n(u) %= \sum_{k=-n}^n \left( 1 - \frac{|k|}{n+1} \right) \rme^{\rmi k x}
 \label{lem:fejer}
 La fonction $x \to K_n(x)$ donn\'{e}e par \eqref{eq:fejer} est un noyau de sommabilit\'{e}, appel\'{e} \emph{noyau de Fejer}.
 \end{lemma}
-\begin{proof}\smartqed
+\begin{proof}
 Comme $\int_\tore \rme^{\rmi k t} \rmd t= 0$ si $k \ne 0$, nous avons $\int_\tore K_n(t) \rmd t= 2 \pi$.
 Comme $K_n(t) \geq 0$ pour tout $t \in \tore$, nous avons de m\^{e}me $\int_\tore |K_n(t)| \rmd t = 2 \pi$.
 Finalement, soit $\delta \in \ooint{0,\pi} $. Pour tout $t \in \ooint{\delta,2\pi - \delta}$, $\sin t/2 \geq \sin \delta/2$,
@@ -671,7 +671,7 @@ $$
 \quad\text{quand}\quad n\to\infty\;.
 $$
 \end{lemma}
-\begin{proof}\smartqed
+\begin{proof}
   En utilisant~(\ref{eq:kernel:normalisation}), on a, pour tout $x$,
 $$
 \left|\frac{1}{2 \pi} \int_\tore f(t) \kappa_n(x-t)\;  \rmd t - f(x)\right|
@@ -707,7 +707,7 @@ La suite $(\phi_n)_{n\in\Zset}$ d\'{e}finie par~(\ref{eq:expo_complex}) g\'{e}n\
 l'espace de Hilbert $\ltwo(\tore,\cB(\tore),\mu)$, ce qu'on \'{e}crit
 $\cspan{\phi_n,\,n\in\Zset}=\ltwo(\tore,\cB(\tore),\mu)$.
 \end{corollary}
-\begin{proof}\smartqed
+\begin{proof}
   D'apr\`{e}s \cite[proposition~8 du chapitre~6, page~128]{royden:1988}, pour tout
   $\epsilon>0$ et toute $f\in\ltwo(\tore,\cB(\tore),\mu)$, il existe une
   fonction $f_\epsilon$ continue sur $[0,2\pi]$ telle que
@@ -752,7 +752,7 @@ forme une famille orthogonale compl\`{e}te de $\ltwo(\tore)$.
 % Soit $f: \rset \to \rset$ une fonction $2\pi$-p\'{e}riodique localement int\'{e}grable par rapport \`{a} la mesure de Lebesgue. Alors,
 % $\lim_{t \to 0} \int_\tore | f(x-t) - f(x) | \rmd x = 0$.
 % \end{lemma}
-% \begin{proof}\smartqed
+% \begin{proof}
 % Pour $M > 0$, on note $f_M(x)= f(x) \1 \{ |f(x)| \leq M \} $. On a
 % \begin{align*}
 % &\int_{\tore} |f(x-t) - f(x)| \rmd x \\
@@ -771,7 +771,7 @@ forme une famille orthogonale compl\`{e}te de $\ltwo(\tore)$.
 % \lim_{n \to \infty} \int_\tore \left| \frac{1}{2\pi} \int_{-\pi}^\pi \kappa_n(t) f(x-t) \rmd t - f(x) \right| \rmd x = 0 \eqsp.
 % \]
 % \end{theorem}
-% \begin{proof}\smartqed
+% \begin{proof}
 % L'\'{e}quation \eqref{eq:kernel:normalisation} implique
 % \[
 % \frac{1}{2\pi} \int_\tore \kappa_n(t) f(x-t) \rmd t - f(x)= \frac{1}{2\pi} \int_\tore \kappa_n(t) \left( f(x-t) - f(x) \right) \rmd t \eqsp.
@@ -805,7 +805,7 @@ forme une famille orthogonale compl\`{e}te de $\ltwo(\tore)$.
 % \label{theo:coefficient-fourier-nul-implique-f-nul}
 % Si $f \in \lone(\tore)$ et si $\pscal{f}{\phi_n}=0$ pour tout $n \in \nset$, alors $f=0$ presque-partout.
 % \end{theorem}
-% \begin{proof}\smartqed
+% \begin{proof}
 % La condition $\pscal{f}{\phi_n}=0$ pour tout $n \in \nset$ implique que
 % \[
 % f_n(x)= \sum_{k=-n}^n \pscal{f}{\phi_k} \phi_k(x)= \sum_{k=-n}^n \frac{1}{2 \pi} \int f(t) \rme^{\rmi k (x-t)} \rmd t = 0 \eqsp,
@@ -825,7 +825,7 @@ forme une famille orthogonale compl\`{e}te de $\ltwo(\tore)$.
 % \label{theo:completude-base-l2}
 % La suite $(\phi_n)_{n \in \zset}$, $\phi_n(x)= (2 \pi)^{-1/2} \rme^{\rmi n x}$ est compl\`{e}te.
 % \end{theorem}
-% \begin{proof}\smartqed
+% \begin{proof}
 % Si $f \in \ltwo(\tore)$, alors $f \in \lone(\tore)$. Le Th\'{e}or\`{e}me~\ref{theo:coefficient-fourier-nul-implique-f-nul} montre que
 % si $\pscal{f}{\phi_n}= 0$ pour tout $n \in \nset$, alors $f=0$ dans $\ltwo(\tore)$. Le Th\'{e}or\`{e}me~\ref{theo:caracterisation-base-complete}
 % montre que la suite $(\phi_n)$ est compl\`{e}te.
@@ -868,7 +868,7 @@ $\cal H$ et soit $x$ un \'{e}l\'{e}ment quelconque de ${\cal H}$, alors\,:
 \end{enumerate}
 On appelle $\proj{x}{\cE}$ la projection orthogonale de $x$ sur $\cE$.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 \begin{enumerate}[label=\emph{\alph*})]
    %===
    \item
@@ -994,7 +994,7 @@ de $\cH$, tels que $\cE_1 \perp \cE_2$. Alors\,:
 Si $\cal E$ est un sous-ensemble d'un espace de Hilbert $\cal H$,
 alors ${\cal E}^{\perp}$ est un sous-espace ferm\'{e}.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Soit $(x_n)_{n \geq 0}$ une suite convergente d'\'{e}l\'{e}ments de
 ${\cal E}^{\perp}$. Notons $x$ la limite de cette suite. Par
 continuit\'{e} du produit scalaire nous avons, pour tout $y\in \cE$,
@@ -1024,7 +1024,7 @@ Alors, pour tout $h \in \cH$,
 \]
 \end{enumerate}
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Remarquons tout d'abord~(\ref{it:union_fermee_hilbert}) se d\'{e}duit ais\'{e}ment en
 appliquant~(\ref{it:intersection_hilbert}) et en remarquant que
 $$
@@ -1128,7 +1128,7 @@ Soit $\calH$ un espace de Hilbert s\'{e}parable.
 \item Si $\calH$ est de dimension fini, alors in est isomorphe \`{a} $\cset^n$.
 \end{enumerate}
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
   Soit $(e_i)$ une suite orthonormale compl\`{e}te de $\calH$. Si $\calH$ est
   infini-dimensionnel, alors $(e_i)$ est une suite infinie. Soit $x \in
   \calH$. Pour $x \in \calH$, d\'{e}finissons $Tx= (\alpha_i)$, o\`{u} $\alpha_i =
@@ -1154,7 +1154,7 @@ $S v_t= w_t$. De plus, on a $S\left( \cspan{v_t, t \in \Tset} \right) = \cspan{w
 \end{enumerate}
 Dans la suite, nous  utiliserons la m\^{e}me notation pour $S$ et son prologement $\bar{S}$.
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
   Soit $v \in \bar{\calG}$. Pour toute suite $(v_n) \in \calG$ convergeant vers
   $v$, la suite $(Sv_n)$ est une suite de Cauchy dans $\calI$ (car $(v_n)$ est
   une suite de Cauchy dans $\calG$ et $S$ est isom\'{e}trique). Il existe donc $w

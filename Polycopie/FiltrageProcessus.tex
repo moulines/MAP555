@@ -14,7 +14,7 @@ On s'int\'eresse dans ce paragraphe aux propri\'et\'es du processus
 $(Y_t)$ obtenu comme image du processus $(X_t)$ par le filtre
 lin\'eaire suivant :
 \begin{equation}\label{eq:filtrage_1}
-Y_t=\sum_{k\in\mathbb{Z}}\psi_k X_{t-k}\;,
+Y_t=\sum_{k\in\zset}\psi_k X_{t-k}\;,
 \end{equation}
 o\`u $(\psi_k)$ est une suite de nombres complexes.
 Lorsqu'il n'y a qu'un nombre fini de $\psi_k$ non nuls,
@@ -32,17 +32,17 @@ donne un sens pr\'ecis \`a cette limite.
 % lin\'eaires du processus, \'etendues \`a toutes leurs limites $L^2$.
 
 % \begin{definition}
-%   Soit $X=\{X_t, t\in \Zset\}$ un processus du second ordre. On note
+%   Soit $X=\{X_t, t\in \zset\}$ un processus du second ordre. On note
 %   $\cH^X_\infty$ la fermeture dans $L^2(\Omega)$ du sous-espace engendr\'e par
-%   les v.a. $\{X_t,\,t\in \Zset\}$,
+%   les v.a. $\{X_t,\,t\in \zset\}$,
 % $$
-% \cH^X_\infty = \cspan{X_t,\,t\in \Zset}\;.
+% \cH^X_\infty = \cspan{X_t,\,t\in \zset}\;.
 % $$
 % \end{definition}
 % Cet ensemble est alors le sous-espace de $L^2(\Omega)$ contenant toute v.a. $Y$
 % pour lesquelles il existe une suite d'\'el\'ements $(Y_n)_{n\geq1}$ de
-% $\lspan{X_t,\,t\in \Zset}$ (l'espace des combinaisons lin\'eaires finies form\'ees
-% d'\'el\'ements de $\{X_t, t\in \Zset\}$) qui converge vers $Y$ au sens $L^2$ quand
+% $\lspan{X_t,\,t\in \zset}$ (l'espace des combinaisons lin\'eaires finies form\'ees
+% d'\'el\'ements de $\{X_t, t\in \zset\}$) qui converge vers $Y$ au sens $L^2$ quand
 % $n\to\infty$, \textit{i.e.}
 % $$
 % \lim_{n\to\infty}\esp{\left|Y-Y_n\right|^2}\to 0 \; .
@@ -53,7 +53,7 @@ donne un sens pr\'ecis \`a cette limite.
 % des filtrages lin\'eaires \`a valeurs dans $\cH^X_\infty$.
 
 % \begin{definition}[Op\'erateur de retard]
-%   Soit $\{X_t,\,t\in\Zset\}$ d\'efini sur $(\Omega,\cF,\PP)$ un processus du
+%   Soit $\{X_t,\,t\in\zset\}$ d\'efini sur $(\Omega,\cF,\PP)$ un processus du
 %   second ordre. On d\'efinit l'op\'erateur de retard $B$ (comme {\em backshift} en
 %   anglais) comme l'op\'erateur de l'espace $\cH^X_\infty$ dans lui-m\^{e}me
 %   d\'efini par $B(X_t)=X_{t-1}$. (l'extension \`a $\cH^X_\infty$ tout entier est
@@ -63,7 +63,7 @@ donne un sens pr\'ecis \`a cette limite.
 
 % On a le r\'esultat suivant dont la preuve \'el\'ementaire est omise.
 % \begin{proposition}
-%   Soit $X=\{X_t,\,t\in\Zset\}$ un processus du second ordre. Supposons que $X$
+%   Soit $X=\{X_t,\,t\in\zset\}$ un processus du second ordre. Supposons que $X$
 %   soit de moyenne constante, pour tout $t$,
 %   $\esp[X_t]=\mu$. Alors $X$ est stationnaire au second ordre si et seulement
 %   si $B$ est une isom\'etrie de $\cH^X_\infty$ dans lui-m\^{e}me.
@@ -77,19 +77,19 @@ donne un sens pr\'ecis \`a cette limite.
 %   On remarque que l'op\'erateur $B$ est tr\`es li\'e \`a l'op\'erateur $S^{-1}$. Une
 %   diff\'erence essentielle est qu'il op\`ere sur un espace de v.a. (l'espace
 %   $\cH^X_\infty$) alors que $S^{-1}$ op\`ere sur un espace de trajectoires
-%   (l'espace $E^\Zset$). Cette relation est formellement donn\'ee par l'\'egalit\'e des
+%   (l'espace $E^\zset$). Cette relation est formellement donn\'ee par l'\'egalit\'e des
 %   2 v.a.  $B(\Pi_t\circ X)=\Pi_t\circ S^{-1}\circ X$.
 % \end{remark}
 
 % Cette remarque permet imm\'ediatement d'adapter le cas des filtres RIF de
 % l'exemple~\ref{exple:rif} au contexte d\'ecrit ci-dessus.
-% Notons $\phi(B)=\sum_k\phi_kB^k$, o\`u $(\phi_k)_{k\in\Zset}$ est une
-% suite \`a support fini. Alors, pour tout $t\in\Zset$,
+% Notons $\phi(B)=\sum_k\phi_kB^k$, o\`u $(\phi_k)_{k\in\zset}$ est une
+% suite \`a support fini. Alors, pour tout $t\in\zset$,
 % $$
 % Y_t=\phi(B)(X_t)= \sum_k\phi_k X_{t-k}
 % $$
 % est un \'el\'ement de $\cH^X_\infty$. Il est ais\'e de calculer la moyenne et la
-% covariance du processus obtenu $Y=\{Y_t,\,t\in\Zset\}$ en utilisant les
+% covariance du processus obtenu $Y=\{Y_t,\,t\in\zset\}$ en utilisant les
 % propri\'et\'es de lin\'earit\'e et de sesquilin\'earit\'e de la covariance. Le th\'eor\`eme
 % suivant traite un cas un peu plus g\'en\'eral, qui montre que ces calculs passent
 % ais\'ement \`a la limite dans le cas d'une somme infinie, pourvu que
@@ -99,9 +99,9 @@ donne un sens pr\'ecis \`a cette limite.
 
 \begin{theorem}
  \label{theo:filtragepassl}
- Soit $(\psi_k)_{k\in\Zset}$ une suite absolument sommable, \ie\ $\sum_{k= -\infty}^\infty |\psi_k| < \infty$
-et soit $(X_{t})$ un processus al\'eatoire tel que $\sup_{t \in \Zset} \PE {|X_{t}|} < \infty$.
-Alors, pour tout $t \in \Zset$, la suite~:
+ Soit $(\psi_k)_{k\in\zset}$ une suite absolument sommable, \ie\ $\sum_{k= -\infty}^\infty |\psi_k| < \infty$
+et soit $(X_{t})$ un processus al\'eatoire tel que $\sup_{t \in \zset} \PE {|X_{t}|} < \infty$.
+Alors, pour tout $t \in \zset$, la suite~:
 \[
 Y_{n,t} = \sum_{k=-n}^n \psi_k X_{t-k}
 \]
@@ -115,33 +115,33 @@ converge vers $Y_t$ dans  $L^1\espaceproba$, \textit{i.e.}
 $$
 \limn \PE{ |Y_{n,t} - Y_{t}|} = 0 \eqsp.
 $$
-Supposons que $\sup_{t \in \Zset} \PE{|X_t|^2} < \infty$ alors
+Supposons que $\sup_{t \in \zset} \PE{|X_t|^2} < \infty$ alors
 $\PE{|Y_{t}|^2} < \infty$ et la suite $(Y_{n,t})_{n \geq 0}$ converge en moyenne quadratique vers la variable
 al\'eatoire $Y_{t}$, \textit{i.e.}
 $$
 \limn \PE {|Y_{n,t} - Y_{t}|^2} = 0 \eqsp.
 $$
 \end{theorem}
-\begin{proof}\smartqed
-Notons pour tout $t \in \Zset$ et $n \in \Nset$, $U_{n,t} = \sum_{k=-n}^{n} |\psi_k| |X_{t-k}|$. La suite
-$(U_{n,t})_{n \geq 0}$ est une suite de variables al\'eatoires int\'egrables. Puisque $\limn \uparrow U_{n,t} = \sum_{k\in\Zset}|\psi_k| |X_{t-k}|$, on en d\'eduit que (th\'eor\`eme de Beppo-Levi)
+\begin{proof}
+Notons pour tout $t \in \zset$ et $n \in \Nset$, $U_{n,t} = \sum_{k=-n}^{n} |\psi_k| |X_{t-k}|$. La suite
+$(U_{n,t})_{n \geq 0}$ est une suite de variables al\'eatoires int\'egrables. Puisque $\limn \uparrow U_{n,t} = \sum_{k\in\zset}|\psi_k| |X_{t-k}|$, on en d\'eduit que (th\'eor\`eme de Beppo-Levi)
 $$
 \lim_{n \to \infty} \uparrow \PE{U_{n,t}} = \PE{\sum_{k\in\zset}|\psi_k| |X_{t-k}|}\;,
 $$
 o\`u $\lim_{n \to \infty} \uparrow$ signifie qu'il s'agit d'une limite croissante.
 Comme
 $$
-\PE{U_{n,t}}\leq \sum_{k=-n}^{n} |\psi_k| \PE{|X_{t-k}|} \leq \sup_{t \in \Zset} \PE{|X_t|} \, \sum_{k\in\Zset} |\psi_s|
+\PE{U_{n,t}}\leq \sum_{k=-n}^{n} |\psi_k| \PE{|X_{t-k}|} \leq \sup_{t \in \zset} \PE{|X_t|} \, \sum_{k\in\zset} |\psi_s|
 <\infty\eqsp,
 $$
 on en d\'eduit que
 \[
-\PE {\sum_{k\in\Zset} |\psi_k| |X_{t-k}| }< \infty \eqsp.
+\PE {\sum_{k\in\zset} |\psi_k| |X_{t-k}| }< \infty \eqsp.
 \]
 Par cons\'equent, il existe un ensemble $\Omega_0 \in \cF$ tel que $\PP(\Omega_0) = 1$
 et tel que, pour tout $\omega \in \Omega_0$,
 \[
-\sum_{k\in\Zset} |\psi_k| | X_{t-k}(\omega) | < \infty\; .
+\sum_{k\in\zset} |\psi_k| | X_{t-k}(\omega) | < \infty\; .
 \]
 Donc pour tout $\omega \in \Omega_0$,
 $$
@@ -151,16 +151,16 @@ $$
 Ainsi, pour tout $\omega \in \Omega_0$, $Y_{n,t}(\omega)$ est convergente et converge vers
 $Y_t(\omega)$, ce qui montre que $\limn Y_{n,t}= Y_t$ \ps\ . Le lemme de Fatou montre que
 \[
-\PE{|Y_t|}= \PE{\liminf_n |Y_{n,t}|} \leq \liminf_n \PE{Y_{n,t}} \leq \sup_t \PE{|X_t|} \sum_{j=-\infty}^\infty |\psi_j| < \infty \eqsp,
+\PE{|Y_t|}= \PE{\liminf_n |Y_{n,t}|} \leq \liminf_n \PE{|Y_{n,t}|} \leq \sup_t \PE{|X_t|} \sum_{j=-\infty}^\infty |\psi_j| < \infty \eqsp,
 \]
-et donc que $Y_t \in \lone\espaceproba$. Comme $|Y_{n,t} - Y_t| \leq \sum_{k \in \Zset} |\psi_k| |X_{t-k}|$,
+et donc que $Y_t \in \lone\espaceproba$. Comme $|Y_{n,t} - Y_t| \leq \sum_{k \in \zset} |\psi_k| |X_{t-k}|$,
 le th\'eor\`eme de convergence domin\'ee montre que $\lim_n \PE{|Y_{n,t}-Y_t|} = 0$ et donc que la suite
 $\{ Y_{n,t} \}$ converge vers $Y_t$ dans $\lone\espaceproba$.
 
-Consid\'erons maintenant le cas o\`u $\sup_{t \in \Zset}
+Consid\'erons maintenant le cas o\`u $\sup_{t \in \zset}
 \PE{|X_{t}|^2} < \infty$. Remarquons tout d'abord que $\PE{
 |X_{t}|} \leq (\PE {|X_{t}|^2})^{1/2}$ et donc que cette condition
-implique que $\sup_{t \in \Zset} \PE {|X_{t}|} < \infty$. La
+implique que $\sup_{t \in \zset} \PE {|X_{t}|} < \infty$. La
 suite $(Y_{m,t})_{m\geq 0}$ est une suite de Cauchy dans
 $L^2\espaceproba$. En effet, pour $p \geq q$,
 nous avons en notant $\| X \|_2 = \left( \PE{|X|^2} \right)^{1/2}$
@@ -183,7 +183,7 @@ lin\'eaire d'un processus stationnaire au second ordre $(X_t)$ via
 l'\'equation (\ref{eq:filtrage_1}) est
 lui-m\^{e}me stationnaire au second ordre, \`a condition que la
 suite des $(\psi_k)$ soit absolument sommable
-\textit{i.e.} $\sum_{k\in\mathbb{Z}}|\psi_k|<\infty$.
+\textit{i.e.} $\sum_{k\in\zset}|\psi_k|<\infty$.
 
 \begin{theorem}[Filtrage des processus stationnaires au second ordre]
  \label{theo:filtragepassl_stat}
@@ -211,7 +211,7 @@ et de mesure spectrale~:
 \end{equation}
 o\`u $\psi(\rme^{-\rmi \lambda}) = \sum_{k\in \zset} \psi_k \rme^{-\rmi k \lambda}$.
 %est
-%la transform\'ee de Fourier \`a temps discret de la suite $\{ \psi_k \}_{k \in \Zset}$.
+%la transform\'ee de Fourier \`a temps discret de la suite $\{ \psi_k \}_{k \in \zset}$.
 %Enfin l'intercovariance entre
 %les processus $Y_{t}$ et $X_{t}$ a pour expression~:
 %\begin{equation}
@@ -220,20 +220,20 @@ o\`u $\psi(\rme^{-\rmi \lambda}) = \sum_{k\in \zset} \psi_k \rme^{-\rmi k \lambd
 % = \sum_{k=-\infty}^\infty \psi_k \gamma_X(h-k)
 % \end{equation}
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 D'apr\`es la continuit\'e du produit scalaire dans $L^2\espaceproba$, voir th\'eor\`eme \ref{theo:cont_prod_int}, on a
 \begin{multline*}
-\PE{\sum_{k\in\Zset}\psi_k X_{t-k}}=\PE{\lim_{n\to\infty}\sum_{k=-n}^n \psi_k X_{t-k}}
+\PE{\sum_{k\in\zset}\psi_k X_{t-k}}=\PE{\lim_{n\to\infty}\sum_{k=-n}^n \psi_k X_{t-k}}
 =\lim_{n\to\infty}\PE{\sum_{k=-n}^n \psi_k X_{t-k}}\\
 =\mu_X \left(\lim_{n\to\infty}\sum_{k=-n}^n \psi_k \right)
-=\mu_X \sum_{k\in\Zset} \psi_k\; .
+=\mu_X \sum_{k\in\zset} \psi_k\; .
 \end{multline*}
 
 Montrons \`a pr\'esent le r\'esultat sur la fonction d'auto-covariance.
 D'apr\`es la continuit\'e du produit scalaire dans $L^2\espaceproba$, voir th\'eor\`eme \ref{theo:cont_prod_int}, on a
 \begin{equation*}
 \Cov{Y_t}{Y_{t+h}} =\lim_{n\to\infty}\sum_{k,j=-n}^n\psi_k \bar{\psi}_j\Cov{X_{t-k}}{X_{t+h-j}}
-= \sum_{k\in\Zset}\psi_k \bar{\psi}_j\gamma_X(h+k-j)\; ,
+= \sum_{k\in\zset}\psi_k \bar{\psi}_j\gamma_X(h+k-j)\; ,
 \end{equation*}
 ce qui montre Eq.~\eqref{eq:facfiltrage}
 % Pour la fonction
@@ -302,7 +302,7 @@ qui donne~:
             \psi_j \bar{\psi}_k \rme^{\rmi k \lambda}\rme^{-\rmi j\lambda}
    = \int_\tore \rme^{\rmi h \lambda} |\psi(\rme^{-\rmi \lambda})|^2 \nu_X(\rmd\lambda)\;,
 \]
-o\`u $\psi(\rme^{-\rmi \lambda})=\sum_{k\in\Zset} \psi_k \rme^{-\rmi k \lambda}$.
+o\`u $\psi(\rme^{-\rmi \lambda})=\sum_{k\in\zset} \psi_k \rme^{-\rmi k \lambda}$.
 On en d\'eduit, d'apr\`es le th\'eor\`eme \ref{theo:herglotz}
 que $\nu_Y(\rmd\lambda) = |\psi(\rme^{-\rmi \lambda})|^2\nu_X(\rmd\lambda)$.
 %  Pour d\'eterminer l'expression de
@@ -342,7 +342,7 @@ en filtrant un bruit blanc.
 \label{def:proc_lin}
 Nous dirons que $(X_{t})$ est un \emph{processus lin\'eaire} s'il existe
 un bruit blanc $Z_{t} \sim \BB(0,\sigma^2)$ et une suite de coefficients
-$(\psi_k)_{k \in \Zset}$ absolument sommable telle que\,:
+$(\psi_k)_{k \in \zset}$ absolument sommable telle que\,:
 \begin{equation}
 \label{eq:representationlineaire}
  X_{t}= \mu+\sum_{k=-\infty}^\infty \psi_k Z_{t-k},\quad t\in\zset\;,
@@ -356,7 +356,7 @@ si~(\ref{eq:representationlineaire}) est v\'erifi\'ee et qu'il existe de plus un
 suite $(\pi_k)_{k\geq0}$ absolument sommable telle que
 \begin{equation}
 \label{eq:representationlineaireinversible}
- Z_{t}= \sum_{k=0}^\infty \pi_k \; (X_{t-k}-\mu),\quad t\in\Zset\;.
+ Z_{t}= \sum_{k=0}^\infty \pi_k \; (X_{t-k}-\mu),\quad t\in\zset\;.
 \end{equation}
 \end{definition}
 D'apr\`es le th\'eor\`eme \ref{theo:filtragepassl_stat}, un processus
@@ -623,11 +623,11 @@ $$
 %\begin{definition}[Op\'erateur de retard]
 %\label{def:operateur-retard}
 %\index{Op\'erateur de retard}
-%  Soit $(X_t)_{t\in\Zset}$ d\'efini sur $\espaceproba$ un processus stationnaire au
+%  Soit $(X_t)_{t\in\zset}$ d\'efini sur $\espaceproba$ un processus stationnaire au
 %  second ordre et soit $\cH^X_\infty$ son enveloppe lin\'eaire.
 %D'apr\`es le th\'eor\`eme \ref{theo:prolongement-isometrie}, il existe une unique
 %isom\'etrie $B^X$ de  $\cH^X_\infty$ dans $L^2\espaceproba$ telle que
-%$B^X(X_t)=X_{t-1}$, pour tout $t\in\Zset$. De plus, $B^X(\cH^X_\infty)=\cH^X_\infty$.
+%$B^X(X_t)=X_{t-1}$, pour tout $t\in\zset$. De plus, $B^X(\cH^X_\infty)=\cH^X_\infty$.
 % On appellera $B^X$ l'op\'erateur de retard de $X$ (abr\'eviation de {\em backward} en
 %  anglais).
 %\end{definition}
@@ -655,11 +655,11 @@ qui sera utile dans la preuve du th\'eor\`eme \ref{theo:ARMApq}.
 Soit $\cS\espaceproba$ l'ensemble des processus index\'es par $\zset$
 stationnaires au second ordre et \`a valeurs complexes. A toute suite de
 coefficients complexes $(\alpha_k)$ v\'erifiant :
-$\sum_{k\in\Zset}|\alpha_k|<\infty$, on associe un op\'erateur
+$\sum_{k\in\zset}|\alpha_k|<\infty$, on associe un op\'erateur
 $\operatorname{F}_\alpha$ qui \`a $X\in\cS\espaceproba$ associe le processus $Y$
 d\'efini par :
 $$
-\operatorname{F}_\alpha:X\mapsto Y=(Y_t)_{t\in\Zset}=\left(\sum_{k\in\Zset}\alpha_k X_{t-k}\right)_{t\in\Zset}\; .
+\operatorname{F}_\alpha:X\mapsto Y=(Y_t)_{t\in\zset}=\left(\sum_{k\in\zset}\alpha_k X_{t-k}\right)_{t\in\zset}\; .
 $$
 D'apr\`es le th\'eor\`eme \ref{theo:filtragepassl_stat}, $Y$ est aussi dans $\cS\espaceproba$.
 
@@ -668,27 +668,32 @@ de type $\operatorname{F}_\alpha$.
 
 \begin{lemma}\label{lem:composition}
   Soient $(\alpha_k)$ et $(\beta_k)$ des suites de coefficients complexes
-  telles que : $\sum_{k\in\Zset}|\alpha_k|<\infty$ et
-  $\sum_{k\in\Zset}|\beta_k|<\infty$.  Si $X\in\cS\espaceproba$ alors
+  telles que : $\sum_{k\in\zset}|\alpha_k|<\infty$ et
+  $\sum_{k\in\zset}|\beta_k|<\infty$.  Si $X\in\cS\espaceproba$ alors
 $$
-\filtop{\alpha} \circ \filtop{\beta}X = \filtop{\alpha * \beta} X\;, \textrm{
+\filtop{\alpha} \circ \filtop{\beta}X = \filtop{\beta} \circ \filtop{\alpha} X =  \filtop{\alpha * \beta} X\;, \textrm{
   dans } L^2\espaceproba\;,\;
 $$
-o\`u $(\alpha*\beta)_k=\sum_{j\in\mathbb{Z}}\alpha_j\beta_{k-j}$ est la convolution discrète des suites $\alpha$ et $\beta$.
+o\`u $(\alpha*\beta)_k=\sum_{j\in\zset}\alpha_j\beta_{k-j}$ est la convolution discrète des suites $\alpha$ et $\beta$.
 \end{lemma}
 
  \begin{proof}
  Soit $Y=\filtop{\beta}X$. D'apr\`es le th\'eor\`eme \ref{theo:filtragepassl_stat},
 puisque $\sum_k|\beta_k|<\infty$, $Y$ est dans $\cS\espaceproba$.
 Pour les m\^{e}mes raisons, $\filtop{\alpha}Y$ est lui aussi dans $\cS\espaceproba$.
-Soient $Z=\filtop{\alpha}[\filtop{\beta}X]$ et $W=[\filtop{\alpha\beta}]X$, on a alors, pour tout $t\in\Zset$,
-$Z_t=\sum_{j\in\Zset}\alpha_j Y_{t-j}$,
-o\`u $Y_t=\sum_{k\in\Zset}\beta_k X_{t-k}$ et $W_t=\sum_{k\in\Zset}(\sum_{j\in\mathbb{Z}}\alpha_j\beta_{k-j})X_{t-k}$. Ainsi,
-$Z_t=\sum_{j\in\Zset}\alpha_j(\sum_{k\in\Zset}\beta_k X_{t-j-k})$.
+Posons $Z=\filtop{\alpha}[\filtop{\beta}X]$ et $W=[\filtop{\alpha * \beta}]X$. On a alors, pour tout $t\in\zset$,
+\begin{align*}
+Z_t &=\sum_{j\in\zset}\alpha_j Y_{t-j} \eqsp \quad Y_t=\sum_{k\in\zset}\beta_k X_{t-k} \\
+W_t &=\sum_{k\in\zset}\left(\sum_{j\in\zset}\alpha_j\beta_{k-j}\right)X_{t-k} \eqsp.
+\end{align*}
+Ainsi,
+$Z_t=\sum_{j\in\zset}\alpha_j(\sum_{k\in\zset}\beta_k X_{t-j-k})$.
 
 D\'efinissons $Z_{t,m,n}$ et $W_{t,m,n}$ par :
-$Z_{t,m,n}=\sum_{j=-m}^m\alpha_j(\sum_{k=-n}^n\beta_k X_{t-j-k})$
-et $W_{t,m,n}=\sum_{k=-m}^m(\sum_{j=-n}^n\alpha_j\beta_{k-j})X_{t-k}$.
+\begin{align*}
+Z_{t,m,n} &=\sum_{j=-m}^m\alpha_j \left(\sum_{k=-n}^n\beta_k X_{t-j-k}\right) \\
+W_{t,m,n} &=\sum_{k=-m}^m \left(\sum_{j=-n}^n\alpha_j\beta_{k-j} \right)X_{t-k} \eqsp.
+\end{align*}
 En posant $\ell=j+k$, on en d\'eduit que
 \begin{equation}\label{eq:chang_ind}
 Z_{t,m,n}=\sum_{\ell=-(m+n)}^{m+n}(\sum_{j=-m}^m\alpha_j\beta_{\ell-j})X_{t-\ell}
@@ -703,28 +708,23 @@ En notant $\| X \|_2 = \left( \PE{|X|^2} \right)^{1/2}$, nous pouvons
 le deuxi\`eme terme du membre de droite de (\ref{eq:dec_filtre1}) \'etant
 nul d'apr\`es (\ref{eq:chang_ind}).
 D'autre part, avec :
-$Z_{t,m}=\sum_{j=-m}^m\alpha_j(\sum_{k\in\Zset}\beta_k X_{t-j-k})
+$Z_{t,m}=\sum_{j=-m}^m\alpha_j(\sum_{k\in\zset}\beta_k X_{t-j-k})
 =\sum_{j=-m}^m\alpha_j Y_{t-j}$, on a :
 \begin{equation}\label{eq:dec_filtre2}
 \|Z_t-Z_{t,m,n}\|_2\leq\|Z_t-Z_{t,m}\|_2+\|Z_{t,m}-Z_{t,m,n}\|_2\;.
 \end{equation}
-En utilisant l'in\'egalit\'e de Cauchy-Schwarz, le fait que
-$Y$ est dans $\cS\espaceproba$ et $\sum_{k\in\Zset}|\alpha_k|<\infty$,  on a
-\begin{multline}\label{eq:dec_filtre3}
-\|Z_t-Z_{t,m}\|_2^2=\left\|\sum_{|j|>m}\alpha_j Y_{t-j}\right\|_2^2
-\leq\PE{\sum_{|j|>m,|j'|>m}|\alpha_j| |\alpha_{j'}| |Y_{t-j}| |Y_{t-j'}|}\\
-\leq \PE{Y_0^2}\left(\sum_{|j|>m} |\alpha_j|\right)^2\to 0\;,\; m\to\infty\;.
-\end{multline}
+En utilisant l'in\'egalit\'e de Minkovsky, le fait que
+$Y$ est dans $\cS\espaceproba$ et $\sum_{k\in\zset}|\alpha_k|<\infty$,  on a
+\begin{equation}\label{eq:dec_filtre3}
+\|Z_t-Z_{t,m}\|_2 =\left\|\sum_{|j|>m}\alpha_j Y_{t-j}\right\|_2  \leq \| Y_0 \| \sum_{|j|>m} |\alpha_j|\to 0\;,\; m\to\infty\;.
+\end{equation}
 D'autre part, en utilisant l'in\'egalit\'e de Cauchy-Schwarz, le fait que
 $X$ est dans $\cS\espaceproba$ et l'absolue sommabilit\'e de $(\alpha_k)$
 et $(\beta_k)$ :
 \begin{align}\label{eq:dec_filtre4}
-\|Z_{t,m}-Z_{t,m,n}\|_2^2&=\left\|\sum_{|j|\leq
-  m}\alpha_j(\sum_{|k|>n}\beta_k X_{t-j-k})\right\|_2^2\\
-&\leq \PE{X_0^2}\left(\sum_{-m\leq j,j'\leq m}|\alpha_j| |\alpha_{j'}|\right)
-\left(\sum_{|k|,|k'|>n} |\beta_k||\beta_{k'}|\right)\\
-&\leq \PE{X_0^2} \left(\sum_{j\in\Zset}|\alpha_j|\right)^2
-\left(\sum_{|k|>n}|\beta_k|\right)^2\to 0\;,\; m,n\to\infty\;.
+\sup_{m \in \nset} \|Z_{t,m}-Z_{t,m,n}\|_2&= \sup_{m \in \nset} \left\|\sum_{|j|\leq
+  m}\alpha_j \left(\sum_{|k|>n}\beta_k X_{t-j-k} \right)\right\|_2\\
+&\leq \|X_0\|_2 \sum_{j\in\zset}|\alpha_j| \sum_{|k|>n}|\beta_k|\to 0\;,\; n\to\infty\;.
 \end{align}
 En utilisant (\ref{eq:dec_filtre2}), (\ref{eq:dec_filtre3}) et
 (\ref{eq:dec_filtre4}), on obtient que le premier terme du membre de
@@ -734,7 +734,6 @@ On peut montrer en utilisant le m\^{e}me type d'arguments que
 $\|W_{t,m+n,m}-W_t\|_2$
 tend vers 0 lorsque $m$ et $n$ tendent vers l'infini ce qui conclut la
 preuve avec (\ref{eq:dec_filtre1}).
-
 \end{proof}
 
 
@@ -763,7 +762,7 @@ $|z| = 1$. Cette solution est unique et a pour expression~:
 \end{equation}
 o\`u les $(\psi_k)$ sont donn\'es par les coefficients du d\'eveloppement
 \begin{equation}\label{eq:dev_laurent_statio}
-\frac{\theta(z)}{\phi(z)}=\sum_{k\in\Zset}\psi_k z^{-k}\;,
+\frac{\theta(z)}{\phi(z)}=\sum_{k\in\zset}\psi_k z^{-k}\;,
 \end{equation}
 convergeant dans la couronne
 \begin{equation}
@@ -792,7 +791,7 @@ du th\'eor\`eme \ref{theo:ARMApq}.
   $\phi(z) \neq 0$ pour $|z|=1$ et $\phi(0)=1$ alors la fraction rationnelle
   $\theta(z)/\phi(z)$ est d\'eveloppable en s\'erie de Laurent, c'est-\`a-dire
 $$
-\frac{\theta(z)}{\phi(z)}=\sum_{k\in\Zset} c_k z^{-k}\;,
+\frac{\theta(z)}{\phi(z)}=\sum_{k\in\zset} c_k z^{-k}\;,
 $$
 o\`u la s\'erie $\sum_{k \in \zset} c_k z^{-k}$ est uniform\'ement convergente dans la
 couronne d\'efinie par
@@ -803,17 +802,17 @@ r_2&=\min\{ |z|~:~ z  \in \cset, |z| > 1, \,\phi(z) = 0 \}\; .
 \end{align*}
 avec la convention $\max(\emptyset)=0$ et $\min(\emptyset)=\infty$.
 
-Le cas $r_1=0$ correspond \`a $\phi(z)\neq0$ dans le disque unité, 
-$\ensemble{z \in \cset}{|z|\leq1}$. 
+Le cas $r_1=0$ correspond \`a $\phi(z)\neq0$ dans le disque unité,
+$\ensemble{z \in \cset}{|z|\leq1}$.
 %Dans ce cas on a $c_k=0$ pour tout $k>0$.
 %Sinon, pour tout $\eta\in(0,r_1)$, $c_k=O(\eta^{-k})$ quand $k\to +\infty$.
 
 Le cas $r_2=\infty$ correspond \`a $\phi(z)\neq0$ dans la couronne $\ensemble{z \in \cset}{|z| \geq 1}$. Dans ce cas on a $c_k=0$ pour tout $k>\max(-1,\mathrm{deg}(\theta)
-- \mathrm{deg}(\phi))$.  
+- \mathrm{deg}(\phi))$.
 %Sinon, pour tout $\eta\in(0,1/r_2)$, $c_k=O(\eta^{k})$
 %quand $k\to\infty$.
 \end{lemma}
-\begin{proof}\smartqed
+\begin{proof}
   La d\'ecomposition en \'el\'ements simples de la fraction rationnelle
   $\theta(z)/\phi(z)$ s'\'ecrit comme la somme d'un polyn\^ome de degr\'e
   $\mathrm{deg}(\theta) - \mathrm{deg}(\phi)$ (avec la convention que tout
@@ -868,9 +867,9 @@ le \Cref{lem:dev_laurent} il existe $r_1<1$ et $r_2>1$ tels que
 \begin{equation}\label{eq:psi_arma}
 \psi(z)=\frac{\theta(z)}{\phi(z)}=\sum_{k=-\infty}^{\infty} \psi_k z^{-k},\; r_1<|z|<r_2\;,
 \end{equation}
-o\`u la suite $(\psi_k)_{k\in\Zset}$ v\'erifie $\sum_k |\psi_k|<\infty$.
-V\'erifions que le processus $(X_t)$ d\'efini par : $X_t=\sum_{k\in\Zset} \psi_k Z_{t-k}=(\filtop{\psi} Z)_t$, pour tout
-$t\in\Zset$ est une solution stationnaire de (\ref{eq:recurrenceARMApq}). D'apr\`es la d\'efinition
+o\`u la suite $(\psi_k)_{k\in\zset}$ v\'erifie $\sum_k |\psi_k|<\infty$.
+V\'erifions que le processus $(X_t)$ d\'efini par : $X_t=\sum_{k\in\zset} \psi_k Z_{t-k}=(\filtop{\psi} Z)_t$, pour tout
+$t\in\zset$ est une solution stationnaire de (\ref{eq:recurrenceARMApq}). D'apr\`es la d\'efinition
 \ref{def:proc_lin}, $(X_t)$ est stationnaire. De plus, d'apr\`es le \Cref{lem:composition},
 $$
 \filtop{\phi} \circ \filtop{\psi} Z =\filtop{\phi*\psi}Z=\filtop{\theta}Z \eqsp,
@@ -886,27 +885,45 @@ D'autre part, si $X$ est un processus stationnaire au second ordre solution de
 Comme $\phi(z)\neq 0$ pour $|z|= 1$, alors d'apr\`es le
 \Cref{lem:dev_laurent} il existe $r_1<1$ et $r_2>1$ tels que :
 $$
-\xi(z)=\frac{1}{\phi(z)}=\sum_{k\in\Zset} \xi_k z^{k},\; r_1<|z|<r_2\;,
+\xi(z)=\frac{1}{\phi(z)}=\sum_{k\in\zset} \xi_k z^{k},\; r_1<|z|<r_2\;,
 $$
-o\`u la suite $(\xi_k)_{k\in\Zset}$ v\'erifie $\sum_k |\xi_k|<\infty$.
+o\`u la suite $(\xi_k)_{k\in\zset}$ v\'erifie $\sum_k |\xi_k|<\infty$.
 On peut donc appliquer l'op\'erateur $\filtop{\xi}$ aux deux membres de l'\'equation
 (\ref{eq:arma_F}) d'o\`u l'on d\'eduit en utilisant le lemme \ref{lem:composition}
-que $X=\filtop{\xi\theta}Z=\filtop\psi Z$ o\`u $(\psi_k)$ est d\'efinie dans (\ref{eq:psi_arma}).
-Donc $X_t=\sum_{k\in\Zset} \psi_k Z_{t-k}=(\filtop{\psi} Z)_t$, pour tout
-$t\in\Zset$, ce qui assure l'unicit\'e de la solution.
+que 
+$$
+X=\filtop{\xi * \theta}Z=\filtop\psi Z 
+$$ 
+o\`u $(\psi_k)$ est d\'efinie dans (\ref{eq:psi_arma}).
+Donc 
+$$
+X_t=\sum_{k\in\zset} \psi_k Z_{t-k}=(\filtop{\psi} Z)_t \eqsp, 
+$$
+pour tout
+$t\in\zset$, ce qui assure l'unicit\'e de la solution.
 
 R\'eciproquement, si $(X_t)$ est un processus stationnaire solution de (\ref{eq:recurrenceARMApq}) de la forme
-$X_t=\sum_{k\in\Zset}\eta_k Z_{t-k}$ o\`u $\sum_k |\eta_k|<\infty$, montrons que
-$\phi(z)\neq 0$ pour $|z|= 1$. En effet, puisque $X$ est solution de (\ref{eq:arma_F})
-alors : $\filtop{\phi} X=\filtop{\phi}[\filtop{\eta} Z]=\filtop{\theta} Z$. D'apr\`es le lemme \ref{lem:composition},
-$\filtop{\phi\eta}Z=\filtop{\theta} Z$. Posons
-$\zeta_k=\sum_{j\in\Zset}\phi_j \eta_{k-j}$. On a alors, pour tout $t\in\Zset$,
-$\sum_{k\in\Zset}\zeta_k Z_{t-k}=\sum_{j=1}^q\theta_j Z_{t-j}.$
+$$X_t=\sum_{k\in\zset}\eta_k Z_{t-k} \quad  \text{o\`u} \quad  \sum_k |\eta_k|<\infty \eqsp,
+$$ 
+montrons que $\phi(z)\neq 0$ pour $|z|= 1$. En effet, puisque $X$ est solution de (\ref{eq:arma_F})
+alors : 
+$$
+\filtop{\phi} X=\filtop{\phi}[\filtop{\eta} Z]=\filtop{\theta} Z \eqsp.
+$$ 
+D'apr\`es le lemme \ref{lem:composition},
+$$
+\filtop{\phi}[\filtop{\eta} Z]= \filtop{\phi*\eta}Z=\filtop{\theta} Z \eqsp. 
+$$
+Posons
+$\zeta_k=\sum_{j\in\zset}\phi_j \eta_{k-j}$. On a alors, pour tout $t\in\zset$,
+$$
+\sum_{k\in\zset}\zeta_k Z_{t-k}=\sum_{j=1}^q\theta_j Z_{t-j} \eqsp.
+$$
 En multipliant les deux membres de cette \'equation par $Z_{t-\ell}$
 et en prenant l'esp\'erance, on d\'eduit que $\zeta_\ell=\theta_\ell$,
 $\ell=0,\dots,q$ et $\zeta_\ell=0$, sinon. Ainsi,
 $\theta(z)=\phi(z)\eta(z)$, $|z|=1$. Puisque $\theta$ et $\phi$
-n'ont pas de racines communes et que $|\eta(z)|\leq\sum_{k\in\Zset}|\eta_k|<\infty$,
+n'ont pas de racines communes et que $|\eta(z)|\leq\sum_{k\in\zset}|\eta_k|<\infty$,
 si $|z|=1$, $\phi(z)$ ne s'annule pas sur le cercle unit\'e :
 $\{z,\; |z|=1\}$, ce qui conclut la preuve du th\'eor\`eme \ref{theo:ARMApq}.
 
@@ -915,9 +932,9 @@ $\{z,\; |z|=1\}$, ce qui conclut la preuve du th\'eor\`eme \ref{theo:ARMApq}.
 % $$
 % \psi(z)=\frac{\theta(z)}{\phi(z)}=\sum_{k=-\infty}^{\infty} \psi_k z^{k},\; r_1<|z|<r_2\;,
 % $$
-% o\`u la suite $(\psi_k)_{k\in\Zset}$ v\'erifie $\sum_k |\psi_k|<\infty$.
-% V\'erifions que $X_t=\sum_{k\in\Zset} \psi_k Z_{t-k}=\psi(B^Z)Z_t$ pour tout
-% $t\in\Zset$ est une solution stationnaire de (\ref{eq:recurrenceARMApq}). D'apr\`es la d\'efinition
+% o\`u la suite $(\psi_k)_{k\in\zset}$ v\'erifie $\sum_k |\psi_k|<\infty$.
+% V\'erifions que $X_t=\sum_{k\in\zset} \psi_k Z_{t-k}=\psi(B^Z)Z_t$ pour tout
+% $t\in\zset$ est une solution stationnaire de (\ref{eq:recurrenceARMApq}). D'apr\`es la d\'efinition
 % \ref{def:proc_lin}, $(X_t)$ est stationnaire. De plus, par d\'efinition, $\cH^X_\infty\subset\cH^Z_\infty$ et
 % d'apr\`es le lemme \ref{lem:composition},
 % $\phi(B^Z)X_t=\phi(B^Z)\psi(B^Z)Z_t=(\phi\psi)(B^Z)Z_t=\theta(B^Z)Z_t.$
@@ -927,16 +944,16 @@ $\{z,\; |z|=1\}$, ce qui conclut la preuve du th\'eor\`eme \ref{theo:ARMApq}.
 
 
 % R\'eciproquement, si $X_t$ est une solution stationnaire de (\ref{eq:recurrenceARMApq}) de la forme
-% $X_t=\sum_{k\in\Zset}\eta_k Z_{t-k}$ o\`u $\sum_k |\eta_k|<\infty$
+% $X_t=\sum_{k\in\zset}\eta_k Z_{t-k}$ o\`u $\sum_k |\eta_k|<\infty$
 % alors : $\phi(B^X)X_t=\phi(B^Z)\eta(B^Z)Z_t=\theta(B^Z)Z_t$. D'apr\`es le lemme \ref{lem:composition},
 % $(\phi\eta)(B^Z)Z_t=\theta(B^Z)Z_t$. Posons
-% $\zeta(z)=\phi(z)\eta(z)=\sum_{k\in\Zset}\zeta_k z^k$, lorsque $|z|=1$. On a alors,
-% $\sum_{k\in\Zset}\zeta_k Z_{t-k}=\sum_{j=1}^q\theta_j Z_{t-j}.$
+% $\zeta(z)=\phi(z)\eta(z)=\sum_{k\in\zset}\zeta_k z^k$, lorsque $|z|=1$. On a alors,
+% $\sum_{k\in\zset}\zeta_k Z_{t-k}=\sum_{j=1}^q\theta_j Z_{t-j}.$
 % En multipliant les deux membres de cette \'equation par $Z_{t-\ell}$
 % et en prenant l'esp\'erance, on d\'eduit que $\zeta_\ell=\theta_\ell$,
 % $\ell=0,\dots,q$ et $\zeta_\ell=0$, sinon. Ainsi,
 % $\theta(z)=\phi(z)\eta(z)$, $|z|=1$. Puisque $\theta$ et $\phi$
-% n'ont pas de racines communes et que $|\eta(z)|\leq\sum_{k\in\Zset}|\eta_k|<\infty$,
+% n'ont pas de racines communes et que $|\eta(z)|\leq\sum_{k\in\zset}|\eta_k|<\infty$,
 % si $|z|=1$, $\phi(z)$ ne s'annule pas sur le cercle unit\'e :
 % $\{z,\; |z|=1\}.$
 
@@ -1004,7 +1021,7 @@ $$
 $$
 qui converge dans la couronne $\{z\in\cset\;,\;|z|\geq 1\}.$
 \end{theorem}
-\begin{proof}\smartqed
+\begin{proof}
 Le th\'eor\`eme~\ref{theo:ARMApq} montre l'existence et l'unicit\'e
 de la solution de l'\'equation~(\ref{eq:recurrenceARMApqcausal}) et v\'erifie
 \begin{equation*}
@@ -1020,16 +1037,25 @@ Si maintenant $\phi(z)\neq 0$ pour $|z|\leq 1$, alors, d'apr\`es le
 
 
 R\'eciproquement, si $X$ est une solution stationnaire de
-(\ref{eq:recurrenceARMApqcausal}) de la forme $X_t=\sum_{k\geq 0}\eta_k
-Z_{t-k}$ o\`u $\sum_k |\eta_k|<\infty$, montrons que $\phi(z)\neq 0$ pour
-$|z|\leq 1$. En effet, puisque $X$ est solution
-de~(\ref{eq:recurrenceARMApqcausal}), alors : $\filtop{\phi}
-X=\filtop{\phi}[\filtop{\eta} Z]=\filtop{\theta} Z$. D'apr\`es le lemme
-\ref{lem:composition}, $\filtop{\phi\eta}Z=\filtop{\theta} Z$. Posons, pour
-tout $k\in\mathbb{N}$, $\zeta_k=\sum_{j\geq 0}\phi_j \eta_{k-j}$, o\`u par
-convention, $\eta_\ell=0$, si $\ell<0$.  On a alors, pour tout $t\in\Zset$,
-$\sum_{k\geq 0}\zeta_k Z_{t-k}=\sum_{j=0}^q\theta_j Z_{t-j},$ avec la
-convention $\theta_0=1$.  En multipliant les deux membres de cette \'equation par
+(\ref{eq:recurrenceARMApqcausal}) causale alors  
+$$
+X_t=\sum_{k\geq 0}\eta_k Z_{t-k} \quad  \text{o\`u}  \quad \sum_k |\eta_k|<\infty \eqsp.
+$$
+Montrons que $\phi(z)\neq 0$ pour $|z|\leq 1$. En effet, puisque $X$ est solution
+de~(\ref{eq:recurrenceARMApqcausal}), alors : 
+$$
+\filtop{\phi} X=\filtop{\phi}[\filtop{\eta} Z]=\filtop{\theta} Z \eqsp.
+$$ 
+D'apr\`es le lemme \ref{lem:composition}, nous avons  
+$$
+\filtop{\phi * \eta}Z=\filtop{\theta} Z \eqsp. 
+$$
+Posons, pour
+tout $k\in\mathbb{N}$, $\zeta_k=\sum_{j=0}^k \phi_j \eta_{k-j}$. On a alors, pour tout $t\in\zset$,
+$$
+\sum_{k= 0}^\infty \zeta_k Z_{t-k}=\sum_{j=0}^q\theta_j Z_{t-j} \eqsp,
+$$ 
+avec la convention $\theta_0=1$.  En multipliant les deux membres de cette \'equation par
 $Z_{t-\ell}$ et en prenant l'esp\'erance, on d\'eduit que $\zeta_\ell=\theta_\ell$,
 $\ell=0,\dots,q$ et $\zeta_\ell=0$, sinon. Ainsi, $\theta(z)=\phi(z)\eta(z)$,
 $|z|\leq 1$. Puisque $\theta$ et $\phi$ n'ont pas de racines communes et que
@@ -1063,7 +1089,7 @@ $\phi(z)= 1 - \phi_1 z - \dots - \phi_p z^p$ et $\theta(z)= 1 +
 $\theta(z)$ n'ont pas de z\'eros communs. Alors l'\'equation
 (\ref{eq:recurrenceARMApqinversible}) fournit une repr\'esentation inversible
 de la solution stationnaire au second ordre si et seulement si le polyn\^ome $\theta(z)
-\neq 0$ pour $|z| \leq 1$. Cette solution est unique et a pour
+\neq 0$ pour $|z| \geq 1$. Cette solution est unique et a pour
 expression~:
 \begin{equation}
  \label{eq:solutionARMApq_inversible}
@@ -1073,7 +1099,7 @@ o\`u la suite $(\pi_k)$ est donn\'ee par les coefficients du d\'eveloppement
 $$
 \frac{\phi(z)}{\theta(z)}=\sum_{k=0}^{\infty} \pi_k z^{-k}
 $$
-qui converge dans $\{z\in\cset\;,\;|z|\leq 1\}.$
+qui converge dans $\{z\in\cset\;,\;|z|\geq 1\}.$
 % Soit $X_t$ un processus ARMA$(p,q)$. On suppose que $\phi(z)$ et
 % $\theta(z)$ n'ont pas de z\'eros communs. Alors il existe une suite
 % $\{\pi_k\}$ causale absolument sommable telle que~:
@@ -1107,7 +1133,7 @@ th\'eor\`eme~\ref{theo:ARMApq_causal} et n'est donc pas d\'etaill\'ee ici.
 
 Un mod\`ele ARMA$(p,q)$ est causal et inversible lorsque
 les racines des polyn\^omes $\phi(z)$ et $\theta(z)$ sont toutes
-situ\'ees \`a l'ext\'erieur du disque unit\'e. Dans ce cas, $X_t$ et $Z_t$
+situ\'ees \`a l'intérieur du disque unit\'e. Dans ce cas, $X_t$ et $Z_t$
 se d\'eduisent mutuellement l'un de l'autre par des op\'erations de
 filtrage causal.
 %, la r\'eponse impulsionnelle de chacun de ces

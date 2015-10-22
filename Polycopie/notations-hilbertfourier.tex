@@ -106,8 +106,8 @@
 {\ensuremath{\operatorname{proj}_{#1}\left( \left. #2 \right|#3\right)}}
 }
 %espaces engendr{\'e}s
-\newcommand{\lspan}{\mathrm{Vect}}
-\newcommand{\cspan}{\overline{\mathrm{Vect}}}
+\newcommand{\lspan}[1]{\mathrm{Vect}(#1)}
+\newcommand{\cspan}[1]{\overline{\mathrm{Vect}(#1)}}
 \def\oplusperp{\stackrel{\perp}{\oplus}}
 \def\ominusperp{\ominus}%\def\ominusperp{\stackrel{\perp}{\ominus}}
 
@@ -163,4 +163,4 @@
 \def\retard{\operatorname{S}}
 \def\foo{\rme^{-2 \rmi \pi \nu}}
 \def\cfoo{\rme^{+2 \rmi \pi \nu}}
-\def\toref{\coint{-1/2,1/2}}
+\def\toref{\coint{-1/2,1/2}} 
